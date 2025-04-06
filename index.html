@@ -16,13 +16,13 @@
 
     opzioni.push({ strike, premio, quantita, scadenza, tipo: "call", posizione });
     aggiornaTabella();
-    aggiornaGrafico(); // ✅ AGGIUNTA QUI
+    aggiornaGrafico();
   }
 
   function rimuoviOpzione(index) {
     opzioni.splice(index, 1);
     aggiornaTabella();
-    aggiornaGrafico(); // ✅ AGGIUNTA QUI PER AGGIORNARE IL GRAFICO DOPO LA RIMOZIONE
+    aggiornaGrafico();
   }
 
   function aggiornaTabella() {
@@ -63,7 +63,7 @@
       payoffTotale = payoffTotale.map((val, i) => val + payoff[i]);
 
       datasets.push({
-        label: `Call ${opzione.posizione} @${opzione.strike} (${opzione.scadenza}gg)`, // ✅ CORRETTO USO DEI BACKTICK
+        label: `Call ${opzione.posizione} @${opzione.strike} (${opzione.scadenza}gg)`, // ← CORRETTO QUI
         data: payoff,
         borderColor: colori[idx % colori.length],
         borderWidth: 2,
